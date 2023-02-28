@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="it.units.openresults_rowing.Result">
+        <table name="result" schema="rowingresults" catalog=""/>
+        <id-class class="it.units.openresults_rowing.ResultPK"/>
+        <attributes>
+            <id name="idResult">
+                <column name="idResult" precision="-1"/>
+            </id>
+            <id name="athleteIdAthlete">
+                <column name="Athlete_idAthlete" precision="-1"/>
+            </id>
+            <id name="equipmentIdEquipment">
+                <column name="equipment_idEquipment" precision="-1"/>
+            </id>
+            <id name="eventIdEvent">
+                <column name="event_idEvent" precision="-1"/>
+            </id>
+            <id name="weightclassIdWeightclass">
+                <column name="weightclass_idWeightclass" length="1"/>
+            </id>
+            <id name="genderIdGender">
+                <column name="gender_idGender" length="1"/>
+            </id>
+            <basic name="location">
+                <column name="location" nullable="false" length="45"/>
+            </basic>
+            <basic name="age">
+                <column name="age" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="adaptiveclass">
+                <column name="adaptiveclass" nullable="false" length="3"/>
+            </basic>
+            <basic name="distance">
+                <column name="distance" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="time">
+                <column name="time" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="retrieved">
+                <column name="retrieved" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="entered">
+                <column name="entered" nullable="false" length="45"/>
+            </basic>
+            <basic name="veirfied">
+                <column name="veirfied" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="club">
+                <column name="club" nullable="false" length="45"/>
+            </basic>
+            <basic name="url">
+                <column name="url" nullable="false"/>
+            </basic>
+            <basic name="adaptiveclassIdadaptiveclass">
+                <column name="adaptiveclass_idadaptiveclass" length="3"/>
+            </basic>
+            <many-to-one name="athleteByAthleteIdAthlete" optional="true"
+                         target-entity="it.units.openresults_rowing.Athlete">
+                <join-column name="Athlete_idAthlete" referenced-column-name="idAthlete"/>
+            </many-to-one>
+            <many-to-one name="equipmentByEquipmentIdEquipment" optional="true"
+                         target-entity="it.units.openresults_rowing.Equipment">
+                <join-column name="equipment_idEquipment" referenced-column-name="idEquipment"/>
+            </many-to-one>
+            <many-to-one name="eventByEventIdEvent" optional="true" target-entity="it.units.openresults_rowing.Event">
+                <join-column name="event_idEvent" referenced-column-name="idEvent"/>
+            </many-to-one>
+            <many-to-one name="weightclassByWeightclassIdWeightclass" optional="true"
+                         target-entity="it.units.openresults_rowing.Weightclass">
+                <join-column name="weightclass_idWeightclass" referenced-column-name="idWeightclass"/>
+            </many-to-one>
+            <many-to-one name="genderByGenderIdGender" optional="true"
+                         target-entity="it.units.openresults_rowing.Gender">
+                <join-column name="gender_idGender" referenced-column-name="idGender"/>
+            </many-to-one>
+            <many-to-one name="adaptiveclassByAdaptiveclassIdadaptiveclass" optional="true"
+                         target-entity="it.units.openresults_rowing.Adaptiveclass">
+                <join-column name="adaptiveclass_idadaptiveclass" referenced-column-name="idadaptiveclass"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

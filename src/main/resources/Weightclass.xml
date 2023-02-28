@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="it.units.openresults_rowing.Weightclass">
+        <table name="weightclass" schema="rowingresults" catalog=""/>
+        <attributes>
+            <id name="idWeightclass">
+                <column name="idWeightclass" length="1"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <one-to-many name="resultsByIdWeightclass" mapped-by="weightclassByWeightclassIdWeightclass"
+                         target-entity="it.units.openresults_rowing.Result"/>
+        </attributes>
+    </entity>
+</entity-mappings>

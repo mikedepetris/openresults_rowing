@@ -1,0 +1,22 @@
+[for (.) {
+             "id" : .key,
+             "pos"             : .value."pos."                            ,
+             "name"            : .value.name                              ,
+             "age"             : .value.age                               ,
+             "location"        : .value.location                          ,
+             "country"         : .value.country                           ,
+             "club/affiliation": .value."club/affiliation"                ,
+             "time"            : .value.time                              ,
+             "distance"        : .value.distance                          ,
+             "verified"        : .value.verified                          ,
+             "year"            : .value.year                              ,
+             "machine"         : .value.machine                           ,
+             "event"           : .value.event                             ,
+             "retrieved"       : .value.retrieved                         ,
+             "profile_id"      : .value.profile_id                        ,
+             "rower"           : .value.rower                             ,
+             "weight"          : .value.weight                            ,
+             "gender"          : .value.gender                            ,
+             "adaptive"        : .value.adaptive
+         }]
+

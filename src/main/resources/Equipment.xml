@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="it.units.openresults_rowing.Equipment">
+        <table name="equipment" schema="rowingresults" catalog=""/>
+        <attributes>
+            <id name="idEquipment">
+                <column name="idEquipment" precision="-1"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="url">
+                <column name="url" nullable="false"/>
+            </basic>
+            <one-to-many name="resultsByIdEquipment" mapped-by="equipmentByEquipmentIdEquipment"
+                         target-entity="it.units.openresults_rowing.Result"/>
+        </attributes>
+    </entity>
+</entity-mappings>

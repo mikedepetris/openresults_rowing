@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="it.units.openresults_rowing.Event">
+        <table name="event" schema="rowingresults" catalog=""/>
+        <attributes>
+            <id name="idEvent">
+                <column name="idEvent" precision="-1"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <one-to-many name="resultsByIdEvent" mapped-by="eventByEventIdEvent"
+                         target-entity="it.units.openresults_rowing.Result"/>
+        </attributes>
+    </entity>
+</entity-mappings>
